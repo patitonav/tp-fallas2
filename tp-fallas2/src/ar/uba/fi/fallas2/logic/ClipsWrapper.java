@@ -4,10 +4,10 @@ package ar.uba.fi.fallas2.logic;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 import CLIPSJNI.Environment;
 import CLIPSJNI.FactAddressValue;
 import CLIPSJNI.MultifieldValue;
+import ar.uba.fi.fallas.model.Risk;
 
 public class ClipsWrapper {
 
@@ -15,11 +15,6 @@ public class ClipsWrapper {
 	private Environment clips;
 	private String clpFile = "//data//dkl_ris.clp";
 
-	/**
-	 * 
-	 * @param mapaRtas
-	 * @param ruta
-	 */
 	public ClipsWrapper(HashMap<String, String> mapaRtas, String ruta) {
 		this.clips = new Environment();
 		clips.load(ruta + clpFile);
@@ -28,12 +23,8 @@ public class ClipsWrapper {
 		this.mapaRtas = mapaRtas;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	public ArrayList<Risk> detectRisks() {
-		
+		/*
 		this.addAnswers(Constants.REQUIREMENTS);
 		this.addAnswers(Constants.DESIGN);
 		this.addAnswers(Constants.CODE_AND_UNIT_TEST);
@@ -47,16 +38,12 @@ public class ClipsWrapper {
 		this.addAnswers(Constants.RESOURCES);
 		this.addAnswers(Constants.CONTRACT);
 		this.addAnswers(Constants.PROGRAM_INTERFACES);
-		
+		*/
 		ArrayList<Risk> conclusions = this.getConclusions(); 
 		
 		return conclusions;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	private ArrayList<Risk> getConclusions() {
 		
 		String evalStr = "(assert (enable-conclusions TRUE))";
@@ -88,10 +75,6 @@ public class ClipsWrapper {
 		return resultado;
 	}
 
-	/**
-	 * 
-	 * @param element
-	 */
 	private void addAnswers(String[][] element) {
 		
 		String evalStr = "";
@@ -102,4 +85,5 @@ public class ClipsWrapper {
 			clips.eval(evalStr);
 		}
 	}
+	
 }
