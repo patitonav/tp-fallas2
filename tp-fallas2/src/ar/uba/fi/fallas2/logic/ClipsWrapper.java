@@ -2,7 +2,10 @@ package ar.uba.fi.fallas2.logic;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 import CLIPSJNI.Environment;
 import CLIPSJNI.FactAddressValue;
@@ -10,17 +13,35 @@ import CLIPSJNI.MultifieldValue;
 import ar.uba.fi.fallas.model.Risk;
 
 public class ClipsWrapper {
-
-	private HashMap<String, String> mapaRtas;
+	
 	private Environment clips;
-	private String clpFile = "//data//dkl_ris.clp";
+	private String clpFile = "C:\\Projects\\tp-fallas2\\config\\clips\\tpfallas.clp";
 
-	public ClipsWrapper(HashMap<String, String> mapaRtas, String ruta) {
+	public ClipsWrapper(String ruta) {
 		this.clips = new Environment();
-		clips.load(ruta + clpFile);
-		clips.reset();
+		clips.load(clpFile);
+		clips.reset();		
+	}
+	
+	public List<Risk> fastRun() {
+		List<Risk> result = new ArrayList<Risk>();
+		clips.run();
+		String evalStr = "(find-all-facts ((?a answer))(= 1 1))";
+		MultifieldValue pv = (MultifieldValue) clips.eval(evalStr);
 		
-		this.mapaRtas = mapaRtas;
+		
+		int tNum = pv.listValue().size();
+        if (tNum == 0) {
+            return null;
+        } else {
+        	for (int i = 0; i < tNum; i++) {
+        		FactAddressValue fv = (FactAddressValue) pv.listValue().get(i);
+                result.add(new Risk(new Integer(fv.getFactSlot("pos").toString()), fv.getFactSlot("name").toString()));        		
+            }
+        }
+        
+        Collections.sort(result);
+        return result;
 	}
 
 	public ArrayList<Risk> detectRisks() {
@@ -28,7 +49,7 @@ public class ClipsWrapper {
 		this.addAnswers(Constants.REQUIREMENTS);
 		this.addAnswers(Constants.DESIGN);
 		this.addAnswers(Constants.CODE_AND_UNIT_TEST);
-		this.addAnswers(Constants.INTEGRATION_AND_TEST);
+		this.addAnswers(Constants.INTEGRATION_AND_TEST); ??
 		this.addAnswers(Constants.ENGINEERING_SPECIALTIES);
 		this.addAnswers(Constants.DEVELOPMENT_PROCESS);
 		this.addAnswers(Constants.DEVELOPMENT_SYSTEM);
@@ -39,51 +60,22 @@ public class ClipsWrapper {
 		this.addAnswers(Constants.CONTRACT);
 		this.addAnswers(Constants.PROGRAM_INTERFACES);
 		*/
-		ArrayList<Risk> conclusions = this.getConclusions(); 
+		 
 		
-		return conclusions;
+		return null;
 	}
-
-	private ArrayList<Risk> getConclusions() {
-		
-		String evalStr = "(assert (enable-conclusions TRUE))";
-		clips.eval(evalStr);
-		
-		this.clips.run();
-		
-		//evalStr = "(facts)";
-		//clips.eval(evalStr);
-		
-		evalStr = "(find-all-facts ((?f answer)) TRUE)";
-
-        MultifieldValue pv = (MultifieldValue) clips.eval(evalStr);
-
-        int tNum = pv.listValue().size();
-
-        if (tNum == 0) {
-            return null;
-        }
-        
-        ArrayList<Risk> resultado = new ArrayList<Risk>();
-        
-        FactAddressValue fv = null;
-        for (int i = 0; i < tNum; i++) {
-            fv = (FactAddressValue) pv.listValue().get(i);
-            resultado.add(new Risk(fv.getFactSlot("variable").toString(), fv.getFactSlot("prefix").toString(), fv.getFactSlot("postfix").toString()));
-        }
 	
-		return resultado;
+	public void addAnswerGroup(HashMap<String, String> answerGroup) {
+		for (Iterator<String> keyIter = answerGroup.keySet().iterator(); keyIter.hasNext();) {
+			String key = keyIter.next();
+			String val = answerGroup.get(key);
+			addAnswer(key, val);			
+		}		
 	}
 
-	private void addAnswers(String[][] element) {
-		
-		String evalStr = "";
-		
-		for (int i = 0; i < element.length; i++) {
-			String valor = this.mapaRtas.get(element[i][0]);
-			evalStr = "(assert (" + element[i][1] + " " + valor + "))";
-			clips.eval(evalStr);
-		}
+	public void addAnswer(String name, String value) {
+			String evalStr = "(assert (" + name + " " + value + "))";
+			clips.eval(evalStr);		
 	}
 	
 }

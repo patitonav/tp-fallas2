@@ -1,30 +1,20 @@
 package ar.uba.fi.fallas.model;
 
-public class Risk {
+public class Risk implements Comparable<Risk>{
 	protected String name;
-	protected String prefix;
-	protected String postfix;
-
-	public Risk(String prefix, String name, String postfix) {
-		this.prefix = prefix;
-		this.postfix = postfix;
+	protected Integer index;
+	
+	public Risk(Integer index, String name) {
+		this.index = index;
 		this.name = name;
 	}
 
-	public String getPrefix() {
-		return prefix;
+	public Integer getIndex() {
+		return index;
 	}
-
-	public void setPrefix(String prefix) {
-		this.prefix = prefix;
-	}
-
-	public String getPostfix() {
-		return postfix;
-	}
-
-	public void setPostfix(String postfix) {
-		this.postfix = postfix;
+	
+	public void setIndex(Integer index) {
+		this.index = index;
 	}
 
 	public String getName() {
@@ -33,6 +23,20 @@ public class Risk {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return index + ". " + name;
+	}
+
+	public int compareTo(Risk r) {
+		if (index < r.index)
+			return -1;
+		else if (index > r.index)
+			return 1;
+		else
+			return 0;
 	}
 	
 }

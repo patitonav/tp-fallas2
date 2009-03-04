@@ -1,11 +1,25 @@
-(deftemplate answer
-   (slot pos)
-   (slot name)   
-)
-
-
+(deffacts MAIN::requerimientos
+   (req_estabilidad_reqestables NO)
+   (req_estabilidad_interfaces NO)
+   (req_reqespecificac NO)
+   (req_reqfaltante NO)
+   (req_reqnoescritos NO)
+   (req_interfnodef NO)
+   (req_reqnoentedambig NO)
+   (req_problinterp NO)
+   (req_reqentedconambig NO)
+   (req_entigualclientsinproc NO)
+   (req_reqnosepuedeespecif NO)
+   (req_distInterpConClient NO)
+   (product_req_viab_reqDifImpl NO)
+   (product_req_viab_reqNoDifSinEst SI)
+   (product_req_prec_riesgInovSinConArea NO)
+   (product_req_escab_tamYCompl NO)
+   (product_req_escab_tamYComplSinPrec NO)
+   (product_req_escab_tamReqOrgMasGrand NO))
+   
 (defrule MAIN::r_riesgo_estabilidad
-   (or  (req_estabilidad_reqestables NO)
+   (or  (req_estabilidad_reqestables SI)
         (req_estabilidad_interfaces SI))
    =>
    (assert (existe_riesgo_estabilidad SI)))
@@ -14,41 +28,38 @@
    (or  (req_reqespecificac SI)
         (req_reqfaltante SI)
         (req_reqnoescritos SI)
-        (req_interfnodef NO))
+        (req_interfnodef SI))
    =>
    (assert (existe_riesgo_completitud SI)))
 
 (defrule MAIN::r_riesgo_claridad
-   (or  (and (req_reqentedconambig SI) (req_problinterp NO) )
-        (and (req_reqentedconambig NO) (req_reqnoentedambig NO) )
-   )
+   (or  (req_reqnoentedambig SI)
+        (req_problinterp SI))
+   		(req_reqentedconambig SI)
    =>
    (assert (existe_riesgo_claridad SI)))
 
 (defrule MAIN::r_riesgo_validacion
    (or  (req_entigualclientsinproc NO)
-        (and (req_reqnosepuedeespecif SI) (req_distInterpConClient NO))
-    )
+        (req_reqnosepuedeespecif SI)
+        (req_distInterpConClient SI))
    =>
    (assert (existe_riesgo_validacion SI)))
    
 (defrule MAIN::r_riesgo_viabilidad
-   (and  (product_req_viab_reqDifImpl SI) (product_req_viab_reqNoDifSinEst NO))
+   (or  (product_req_viab_reqDifImpl SI)
+        (product_req_viab_reqNoDifSinEst NO))
    =>
    (assert (existe_riesgo_viabilidad SI)))
 
 (defrule MAIN::r_riesgo_precedencia
-   (or  (and (product_req_prec_existeEstArte NO) (product_req_prec_hayReqNuevo SI) )
-   		(and (product_req_prec_existeEstArte SI) (product_req_prec_seConoceEstDelArte NO) (product_req_prec_riesgInovSinConArea NO))
-   		
-   			
-   )
+   (or  (product_req_prec_riesgInovSinConArea NO))
    =>
    (assert (existe_riesgo_precedencia SI)))
 
 (defrule MAIN::r_riesgo_escabilidad
    (or  (product_req_escab_tamYCompl SI)
-        (and (product_req_escab_tamYComplSinPrec NO) (product_req_escab_tamYCompl NO))
+        (product_req_escab_tamYComplSinPrec NO)
         (product_req_escab_tamReqOrgMasGrand SI))
    =>
    (assert (r_riesgo_escabilidad SI)))
@@ -67,7 +78,7 @@
 (defrule MAIN::riesgo_requerimientos
    (existe_riesgo_requerimientos SI)
    =>
-   (assert (answer (pos 1) (name riesgo.requerimientos))))
+   (assert (answer (pos 1)(name riesgo.requerimientos))))
 
 
 
@@ -218,7 +229,10 @@
    (politicas_inter SI))
 
 
-
+(deftemplate answer
+   (slot pos)
+   (slot name)   
+)
 
 
 
