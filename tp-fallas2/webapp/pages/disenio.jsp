@@ -4,7 +4,7 @@
 	</head>
 
 	<body>
-		<form action="req.srv" method="POST">
+		<form action="disenio.srv" method="POST">
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
