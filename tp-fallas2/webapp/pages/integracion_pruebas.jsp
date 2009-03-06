@@ -4,7 +4,7 @@
 	</head>
 
 	<body>
-		<form>
+		<form action="integracion_pruebas.srv" method="POST">
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
@@ -111,6 +111,13 @@
 				<th align="left" >[12]¿La integración del sistemas se hará en el cliente? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_integ_sist_intProdNoCliente" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Continuar a Especialidades de Ingeniería"/></td>				
 			</tr>
 		</table>
 

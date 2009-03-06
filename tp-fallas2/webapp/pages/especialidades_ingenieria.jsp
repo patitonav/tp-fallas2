@@ -1,10 +1,10 @@
 <html>
 	<head>
-		<title>Taxonomic-Based Questionnaire</title>
+		<title>Especialidades de Ingeniería</title>
 	</head>
 
 	<body>
-		<form>
+		<form action="especialidades_ingenieria.srv" method="POST">
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
@@ -193,6 +193,13 @@
 				<th align="left" > [16] ¿Las especificaciones de diseño son  adecuadas para aplicar al sistema? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_ing_especif_espDisNoAdecImplSist" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Continuar a Proceso de Desarrollo"/></td>				
 			</tr>
 		</table>
 

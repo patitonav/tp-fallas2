@@ -4,7 +4,7 @@
 	</head>
 
 	<body>
-		<form>
+		<form action="proceso_desarrollo.srv" method="POST">
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
@@ -77,6 +77,13 @@
 				<th align="left" >[8] ¿El mecanismo de trazabilidad usado en la evaluación de requerimientos cambia el impacto de los análisis? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="control_producto_TrazCbiaImpAnali" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Continuar a Sistema de Desarrollo"/></td>				
 			</tr>
 			
 		</table>
