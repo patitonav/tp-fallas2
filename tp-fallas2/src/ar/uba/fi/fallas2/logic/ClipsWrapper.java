@@ -11,6 +11,7 @@ import CLIPSJNI.Environment;
 import CLIPSJNI.FactAddressValue;
 import CLIPSJNI.MultifieldValue;
 import ar.uba.fi.fallas.model.Risk;
+import ar.uba.fi.fallas2.ui.LanguageInterpreter;
 
 public class ClipsWrapper {
 	
@@ -74,7 +75,8 @@ public class ClipsWrapper {
 	}
 
 	public void addAnswer(String name, String value) {
-			String evalStr = "(assert (" + name + " " + value + "))";
+			
+			String evalStr = "(assert (" + name + " " + LanguageInterpreter.getInstance().getAnswer(value) + "))";
 			clips.eval(evalStr);		
 	}
 	

@@ -8,7 +8,7 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">1. Interfaces de programa</th>
+				<th colspan="5" align="left">C3. Interfaces de programa</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -160,7 +160,15 @@
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="politicas_DesicTec" size="2" /></td>
 			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Obtener Conclusiones"/></td>				
+			</tr>
 		</table>
 
 		</form>
 	</body>
+</html>
