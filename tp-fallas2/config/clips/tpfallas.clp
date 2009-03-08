@@ -3,6 +3,8 @@
    (slot name)   
 )
 
+;;; requerimientos --------------------------------------------------------------------
+;;; -----------------------------------------------------------------------------------
 
 (defrule MAIN::r_riesgo_estabilidad
    (or  (req_estabilidad_reqestables NO)
@@ -70,8 +72,8 @@
    (assert (answer (pos 1) (name riesgo.requerimientos))))
 
 
-
-
+;;; disenio----------------------------------------------------------------------------
+;;; -----------------------------------------------------------------------------------
 
 (deffacts MAIN::disenio
    (product_dis_func_algNoReq SI)
@@ -95,7 +97,55 @@
    (product_dis_softNoDes_reUtilSofNoDes NO)
    (product_dis_softNoDes_probCots NO)
    (product_dis_softNoDes_noPrevCots NO))
+   
+   
+(defrule MAIN::r_riesgo_funcionalidad
+   (or  (and (product_dis_func_algNoReq SI) (product_dis_func_algDisMarg SI))
+        )
+   =>
+   (assert (existe_riesgo_funcionalidad SI)))
 
+(defrule MAIN::r_riesgo_dificultad
+   (or  (product_dis_dific_hipOpt SI)
+        (product_dis_dific_reqDifDis SI)
+        (product_dis_dific_noReqDifDis SI))
+   =>
+   (assert (existe_riesgo_dificultad SI)))
+
+(defrule MAIN::r_riesgo_performance
+   (or  (product_dis_perfor_probPerf SI)
+        (product_dis_perfor_sinAnalPerf SI)
+        (product_dis_perfor_analPerfSinMod SI))
+   =>
+   (assert (existe_riesgo_performance SI)))
+
+(defrule MAIN::r_riesgo_limites_hard
+   (or  (product_dis_limHard_limHabCumpReq SI))
+   =>
+   (assert (existe_riesgo_limites_hard SI)))
+
+(defrule MAIN::r_riesgo_soft_no_desarrollado
+   (or  (product_dis_softNoDes_reUtilSofNoDes SI)
+        (product_dis_softNoDes_probCots SI)
+        (product_dis_softNoDes_noPrevCots SI))
+   =>
+   (assert (existe_riesgo_soft_no_desarrollado SI)))
+
+(defrule MAIN::print_riesgo_disenio
+   (existe_riesgo_disenio SI)
+   =>
+   (assert (answer (pos 2) (name riesgo.disenio))))
+   
+
+
+
+
+
+
+
+
+;;; code_unit_test----------------------------------------------------------------------------
+;;; -----------------------------------------------------------------------------------
 
 
 (deffacts MAIN::desarrollo
@@ -222,42 +272,7 @@
 
 
 
-(defrule MAIN::r_riesgo_funcionalidad
-   (or  (product_dis_func_algNoReq SI)
-        (product_dis_func_algDisMarg SI))
-   =>
-   (assert (existe_riesgo_funcionalidad SI)))
 
-(defrule MAIN::r_riesgo_dificultad
-   (or  (product_dis_dific_hipOpt SI)
-        (product_dis_dific_reqDifDis SI)
-        (product_dis_dific_noReqDifDis SI))
-   =>
-   (assert (existe_riesgo_dificultad SI)))
-
-(defrule MAIN::r_riesgo_performance
-   (or  (product_dis_perfor_probPerf SI)
-        (product_dis_perfor_sinAnalPerf SI)
-        (product_dis_perfor_analPerfSinMod SI))
-   =>
-   (assert (existe_riesgo_performance SI)))
-
-(defrule MAIN::r_riesgo_limites_hard
-   (or  (product_dis_limHard_limHabCumpReq SI))
-   =>
-   (assert (existe_riesgo_limites_hard SI)))
-
-(defrule MAIN::r_riesgo_soft_no_desarrollado
-   (or  (product_dis_softNoDes_reUtilSofNoDes SI)
-        (product_dis_softNoDes_probCots SI)
-        (product_dis_softNoDes_noPrevCots SI))
-   =>
-   (assert (existe_riesgo_soft_no_desarrollado SI)))
-
-(defrule MAIN::print_riesgo_disenio
-   (existe_riesgo_disenio SI)
-   =>
-   (assert (answer (pos 2) (name riesgo.disenio))))
 
 (defrule MAIN::r_riesgo_testing
    (or  (product_cod_test_testAntCod SI)

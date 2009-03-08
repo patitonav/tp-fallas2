@@ -8,7 +8,10 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">1. Recursos</th>
+				<th colspan="5" align="left">C. Restriccione de Programa</th>
+			</tr>
+			<tr>
+				<th colspan="5" align="left">C1. Recursos</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -124,8 +127,16 @@
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="facilidades_EntIntAdec" size="2" /></td>
 			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Continuar a Contrato"/></td>				
+			</tr>
 
 		</table>
 
 		</form>
 	</body>
+</html>

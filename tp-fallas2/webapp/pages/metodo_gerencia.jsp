@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Metodo de Gerencia</title>
+		<title>Métodos de Gerencia</title>
 	</head>
 
 	<body>
@@ -8,7 +8,7 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">1. Metodo de Gerencia </th>
+				<th colspan="5" align="left">B4. Métodos de Gerencia </th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -110,7 +110,16 @@
 				<td colspan="2"><input type="text" name="gest_configuracion_SistMplesSitios" size="2" /></td>
 			</tr>
 			
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Continuar a Ambiente de Trabajo"/></td>				
+			</tr>
+			
 		</table>
 
 		</form>
 	</body>
+</html>

@@ -8,7 +8,10 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="6" align="left">1. Requerimientos</th>
+				<th colspan="6" align="left">A. Ingeniería de producto</th>
+			</tr>
+			<tr>
+				<th colspan="6" align="left">A1. Requerimientos</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -201,3 +204,4 @@
 
 		</form>
 	</body>
+</html>

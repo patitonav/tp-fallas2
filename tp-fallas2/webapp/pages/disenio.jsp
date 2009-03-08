@@ -8,21 +8,27 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="6" align="left">2. Dise&ntilde;o</th>
+				<th colspan="6" align="left">A2. Dise&ntilde;o</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
-				<th colspan="5" align="left">a. Funcionalidad</th>
+				<th colspan="6" align="left">a. Funcionalidad</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
-				<th colspan="5" align="left">[¿Existen problemas potenciales para encontrar los requerimientos funcionales?]</th>
+				<th colspan="6" align="left">[¿Existen problemas potenciales para encontrar los requerimientos funcionales?]</th>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[1] Existen algoritmos específicos que no satisfacen los requerimientos?</th>
+				<th align="left" >[15] Existen algoritmos específicos que no satisfacen los requerimientos?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_func_algNoReq" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(No) (15.a) ¿Son algunos de los algoritmos o diseños marginales con respecto al cumplimiento de los requerimientos?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_func_algDisMarg" size="2" /></td>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -168,3 +174,4 @@
 
 		</form>
 	</body>
+</html>

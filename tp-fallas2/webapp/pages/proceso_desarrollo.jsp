@@ -8,7 +8,10 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">1. Proceso de Desarrollo </th>
+				<th colspan="5" align="left">B. Ambiente de Desarrollo </th>
+			</tr>
+			<tr>
+				<th colspan="5" align="left">B1. Proceso de Desarrollo </th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -90,3 +93,4 @@
 
 		</form>
 	</body>
+</html>

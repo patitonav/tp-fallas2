@@ -8,7 +8,7 @@
 
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">1. Contrato</th>
+				<th colspan="5" align="left">C2. Contrato</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -54,8 +54,17 @@
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="dependencias_ExistDepExtern" size="2" /></td>
 			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit" value="Continuar a Interfaces del Programa"/></td>				
+			</tr>
+
 			
 		</table>
 
 		</form>
 	</body>
+</html>
