@@ -17,8 +17,8 @@
    (product_req_escab_tamYCompl NO)
    (product_req_escab_tamYComplSinPrec NO)
    (product_req_escab_tamReqOrgMasGrand NO))
-   
-(defrule MAIN::r_riesgo_estabilidad
+  
+ (defrule MAIN::r_riesgo_estabilidad
    (or  (req_estabilidad_reqestables SI)
         (req_estabilidad_interfaces SI))
    =>
@@ -81,9 +81,6 @@
    (assert (answer (pos 1)(name riesgo.requerimientos))))
 
 
-
-
-
 (deffacts MAIN::disenio
    (product_dis_func_algNoReq SI)
    (product_dis_func_algDisMarg NO)
@@ -106,7 +103,6 @@
    (product_dis_softNoDes_reUtilSofNoDes NO)
    (product_dis_softNoDes_probCots NO)
    (product_dis_softNoDes_noPrevCots NO))
-
 
 
 (deffacts MAIN::desarrollo
@@ -146,6 +142,20 @@
    (product_integ_sist_prodNoIntegSisExist NO)
    (product_integ_sist_prodIntEnSisExis NO)
    (product_integ_sist_intProdNoCliente NO))
+   
+ (deffacts MAIN::codificacion_pruebas_unitarias
+   (viabilidad_ImplNoDefEnDis NO)
+   (viabilidad_AlgYDisFacilImplement NO)
+   (pruebas_EmpPruebUnitAntesVerifDis SI)
+   (pruebas_HaySufPruebUnit SI)
+   (pruebas_hayTmpPruebUnit SI)
+   (ruebas_TestUnitCompCal SI)
+   (codif_implem_EspDisSufDetall NO)
+   (codif_implem_CbiaDisMientCodific NO)
+   (codif_implem_RestriccDifCodific SI)
+   (codif_implem_LengAdecProSoft NO)
+   (codif_implem_UsarMchosLeng SI)
+   (codif_implem_CompDesarrIgInstal NO))  
 
 (deffacts MAIN::ingenieria
    (product_ing_mantenib_difMantCodDis NO)
@@ -174,59 +184,125 @@
    (product_ing_especif_espDisNoAdecImplSist NO))
 
 
-
 (deffacts MAIN::proceso_desarrollo
+   (adec_ProcDesAdecProd NO)
+   (control_proceso_proc NO)
+   (control_proceso_MedProdObj NO)
+   (control_proceso_CoordAdecDes NO)
    (formalidad_proc NO)
    (ajustabilidad_proc NO)
-   (control_proceso_proc NO)
    (familiaridad_proc NO)
-   (control_producto_proc SI))
+   (familiaridad_GteGusProc NO)
+   (control_producto_proc SI)
+   (control_producto_TrazReq NO)
+   (control_producto_TrazCbiaImpAnali NO))
 
 (deffacts MAIN::sistema_desarrollo
-   (capacidad_sist NO)
-   (ajustabilidad_sist SI)
-   (usabilidad_sist NO)
-   (familiaridad_sist NO)
-   (confiabilidad_sist NO)
-   (liberacuib_sist NO))
+   (capacidad_SufEstTrabyProc NO)
+   (capacidad_SufCapSolapFases NO)
+   (adecuacion_SistSopAspDesarrProg SI)
+   (usabilidad_GteEncSistFacilUso NO)
+   (usabilidad_ExisBuenaDoc NO)
+   (familiaridad_PersUsaronMet NO)
+   (confiabilidad_SistConsFiable NO)
+   (soporte_sistema_ExisteGteEntrenProd NO)
+   (soporte_sistema_HayAccExpertSistem NO)
+   (soporte_sistema_VendRespProbPlant NO)
+   (tiempos_entrega_EstaEntregSistema NO)
+   (tiempos_entrega_FueTenCtaPresupTmpEntreg NO))
 
 (deffacts MAIN::proceso_gerencia
    (planeamiento_proc_ger NO)
-   (organizacion_proy_proc_ger SI)
-   (experiencia_proc_ger NO)
-   (interfaces_proc_ger NO))
+   (planeamiento_ProgSegPlan NO)
+   (planeamiento_ReplanSegPercan NO)
+   (planeamiento_TodasPersIncPlan NO)
+   (planeamiento_TodasPersIncPlan NO)
+   (planeamiento_ExisPlanContingRsgoCon NO)
+   (planeamiento_ProbLrgPlazAnot SI)
+   (organizacion_OrgProgEfect SI)
+   (organizacion_PersEntPropRol SI)
+   (organizacion_PersConocAutorid SI)
+   (experiencia_ProgTieneGtesExper NO)
+   (interfaces_GciaComnuProbSupSub NO)
+   (interfaces_ConflCliDocum NO)
+   (interfaces_GciaAsegRepCli NO))
 
 (deffacts MAIN::metodo_gerencia
    (monitoreo_met_ger SI)
+   (monitoreo_ExisRepStatPeriod NO)
+   (monitoreo_RepInfoAprop NO)
+   (monitoreo_SegTmpProg NO)
+   (gestion_personal_GteAsigEntren NO)
+   (gestion_personal_GteAsigSinExp NO)
+   (gestion_personal_ImpPlanDef NO)
    (gestion_personal_met_ger NO)
    (aseg_calidad_met_ger NO)
-   (gest_configuracion_met_ger NO))
+   (aseg_calidad_MetUsadoCorrect NO)
+   (aseg_calidad_MecAsegCalid NO)
+   (gest_configuracion_met_ger NO)
+   (gest_configuracion_SistConfCbioUsCorrec NO)
+   (gest_configuracion_ConfCbioAdec NO)
+   (gest_configuracion_SistMplesSitios NO))
 
 (deffacts MAIN::ambiente_trabajo
-   (act_calidad_amb NO)
-   (cooperacion_amb NO)
-   (comunicacion_amb NO)
-   (moral_amb SI))
+   (act_calidad_NivPersOrientProc NO)
+   (act_calidad_AgIncCalid NO)
+   (cooperacion_GenteCoop NO)
+   (cooperacion_GenteCoopLogCom NO)
+   (cooperacion_ReqGciaParaGteJta NO)
+   (comunicacion_BnaComunMiembProg NO)
+   (comunicacion_JfeProyEscTrab NO)
+   (comunicacion_TrabRecibInfoOport NO)
+   (moral_MoralProgEsBna SI)
+   (moral_ExstProbMantPers SI))
 
 (deffacts MAIN::contrato
    (tipo_contr NO)
+   (tipo_contr_DocDifCost NO)
    (restricciones_contr SI)
-   (dependencias_contr NO))
+   (restricciones_ProbDerDatos SI)
+   (dependencias_contr NO)
+   (dependencias_ExistDepExtern NO))
 
 (deffacts MAIN::recursos
    (calendario_rec NO)
+   (calendario_CalEsEstab NO)
+   (calendario_CalEsRealis NO)
+   (calendario_CosasNoPlant NO)
+   (calendario_ExDepExter NO)
    (personal_rec NO)
+   (personal_EsInexp NO)
+   (personal_ExstAreasSinHab NO)
+   (personal_HayPersAdec NO)
+   (personal_HayPersEstab NO)
+   (personal_HayAccPersCap NO)
+   (personal_MiembExpSistSimil NO)
    (presupuesto_rec SI)
-   (facilidades_rec NO))
+   (presupuesto_Estable SI)
+   (presupuesto_Realista SI)
+   (presupuesto_HayFuncElimBajCost SI)
+   (facilidades_rec NO)
+   (facilidades_Adec NO)
+   (facilidades_EntIntAdec NO))
 
 (deffacts MAIN::interfaces
-   (cliente_inter SI)
-   (contratistas_asoc_inter SI)
-   (subcontratistas_inter SI)
-   (contratista_ppal_inter SI)
-   (gerencia_inter SI)
-   (proveedores_inter SI)
-   (politicas_inter SI))
+   (cliente_ProcSinAprobCli SI)
+   (cliente_CliEntAspTecn SI)
+   (cliente_CliEntSoft SI)
+   (cliente_CliInterfProc SI)
+   (cliente_GciaPresPanOpt SI)
+   (contratistas_IntExtCbianSinNot SI)
+   (contratistas_PlanTransInadec SI)
+   (subcontratistas_AmbigTarSubContrat SI)
+   (subcontratistas_ProcRepMonitDist SI)
+   (subcontratistas_AdmTecOrgExt SI)
+   (subcontratistas_DepDelContrat SI)
+   (subcontratistas_ConocSubContTransf SI)
+   (gerencia_inter_LidComunicProbASup SI)
+   (gerencia_inter_LidPresPanOpt SI)
+   (proveedores_ProvEntregCompCrit SI)
+   (politicas_AfecProg SI)
+   (politicas_DesicTec SI))
 
 
 (deftemplate answer
