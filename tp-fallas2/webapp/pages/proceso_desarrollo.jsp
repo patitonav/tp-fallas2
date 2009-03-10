@@ -1,21 +1,48 @@
 <html>
 	<head>
-		<title>Proceso de Desarrollo</title>
+		<title>Proceso de Desarrollo</title>	
+		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<form action="proceso_desarrollo.srv" method="POST">
 
-		<table border="1" cellpadding="0" cellspacing="0">
+		<table border="0" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">B. Ambiente de Desarrollo </th>
+				<th class="principal"  colspan="5" align="left">B. Ambiente de Desarrollo </th>
 			</tr>
 			<tr>
-				<th colspan="5" align="left">B1. Proceso de Desarrollo </th>
+				<th  class="subtitulo" colspan="5" align="left">B1. Proceso de Desarrollo </th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
-				<th colspan="4" align="left">a. Adecuacion </th>
+				<th colspan="4" align="left">a. Formalidad </th>
+			</tr>
+			<tr>
+				<td width="10px">&nbsp;</td>
+				<th colspan="4" align="left">[¿Será difícil de entender o de mantener la implementación?]  </th>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[77] ¿Se está utilizando más de un modelo de desarrollo?  </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="proc_desarrollo_form_masDeUnMod" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (77.a) ¿Es un problema la coordinación entre ellos?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="proc_desarrollo_form_masDeUnModSi" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[78] ¿Existen planes formales y conrolados para todas las actividades de desarrollo?  </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="proc_desarrollo_form_planControlado" size="2" /></td>
+			</tr>
+			<tr>
+				<td width="10px">&nbsp;</td>
+				<th colspan="4" align="left">b. Adecuacion </th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -23,13 +50,19 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[1] ¿El proceso de desarrollo es adecuado para este producto?  </th>
+				<th align="left" >[79] ¿El proceso de desarrollo es adecuado para este producto?  </th>
 				<td width="5">&nbsp;</td>
-				<td colspan="2"><input type="text" name="adec_ProcDesAdecProd" size="2" /></td>
+				<td colspan="2"><input type="text" name="proc_desarrollo_adec_procesoAdecuado" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[80] ¿El proceso de desarrollo está soportado por algún conjunto de procedimientos estándar, métodos o herramientas?  </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="proc_desarrollo_adec_soportProcEstand" size="2" /></td>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
-				<th colspan="4" align="left">b.Control de Procesos  </th>
+				<th colspan="4" align="left">c.Control de Procesos  </th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -37,13 +70,19 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[2] ¿Se puede medir si el proceso de desarrollo está cumpliendo con su productividad y objetivos de calidad?</th>
+				<th align="left" >[81] ¿Están todos siguiendo el proceso de desarrollo?  </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="proc_desarrollo_ctlProc_todosSiguen" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[82] ¿Se puede medir si el proceso de desarrollo está cumpliendo con su productividad y objetivos de calidad?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="control_proceso_MedProdObj" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[3] ¿Existe una coordinación adecuada del desarrollo entre esos sitios?</th>
+				<th align="left" >[83] ¿Existe una coordinación adecuada del desarrollo entre esos sitios?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="control_proceso_CoordAdecDes" size="2" /></td>
 			</tr>
@@ -57,13 +96,13 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[4] ¿La gente está a gusto con el proceso de desarrollo? </th>
+				<th align="left" >[84] ¿La gente está a gusto con el proceso de desarrollo? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="familiaridad_GteGusProc" size="2" /></td>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
-				<th colspan="4" align="left">d. Control de productos </th>
+				<th colspan="4" align="left">d. Control de producto</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -71,22 +110,58 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[7] ¿Existe un mecanismo de trazabilidad que rastree los requisitos de la fuente de especificación a través de los casos de prueba? </th>
+				<th align="left" >[85] ¿Existe un mecanismo de trazabilidad que rastree los requisitos de la fuente de especificación a través de los casos de prueba? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="control_producto_TrazReq" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[8] ¿El mecanismo de trazabilidad usado en la evaluación de requerimientos cambia el impacto de los análisis? </th>
+				<th align="left" >[86] ¿El mecanismo de trazabilidad usado en la evaluación de requerimientos cambia el impacto de los análisis? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="control_producto_TrazCbiaImpAnali" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[87] ¿Existe algún proceso de control de cambios formal? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="control_producto_ctlCambios" size="2" /></td>
+			</tr>
+				<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (87.a) ¿Cubre todo desde los cambios hasta requermientos estimados, diseño, código y documentación?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="control_producto_ctlCambiosSi" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[88] ¿Están mapeados todos los cambios con el sistema y con las pruebas? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="control_producto_cambiosMapeados" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[89] ¿Existe análisis adecuado cuando se agregan nuevos requerimientos al sistema? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="control_producto_analisisNuevosReq" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[90] ¿Tiene Ud. manera de seguir las interfaces? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="control_producto_seguirInterf" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[91] ¿Son el plan de pruebas y los procedimientos actualizados como parte del proceso de cambios? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="control_producto_testPlanUpdated" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="6">&nbsp;</td>				
 			</tr>
 
 			<tr>
-				<td colspan="6"><input type="submit" value="Continuar a Sistema de Desarrollo"/></td>				
+				<td colspan="6"><input type="submit"  class="submit" value="Continuar a Sistema de Desarrollo"/></td>				
 			</tr>
 			
 		</table>

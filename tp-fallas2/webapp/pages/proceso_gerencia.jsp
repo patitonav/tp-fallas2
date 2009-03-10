@@ -1,14 +1,15 @@
 <html>
 	<head>
 		<title>Proceso de Gerencia</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<form action="proceso_gerencia.srv" method="POST">
 
-		<table border="1" cellpadding="0" cellspacing="0">
+		<table border="0" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="5" align="left">1. Proceso de Gerencia </th>
+				<th  class="subtitulo" colspan="5" align="left">B3. Proceso de Gerencia </th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -20,31 +21,37 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[1] ¿El programa esta siendo dirigido segun el plan?  </th>
+				<th align="left" >[103] ¿El programa esta siendo dirigido segun el plan?  </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="planeamiento_ProgSegPlan" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[2] ¿Existe re planeamiento al ocurrir percances?  </th>
+				<th align="left" >(Sí) (103.a) ¿Se necesita continuamente gente para apagar incendios?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="planeamiento_ProgSegPlanSi" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[104] ¿Existe re planeamiento al ocurrir percances?  </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="planeamiento_ReplanSegPercan" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[3] ¿Estan incluidas todas las personas de cualquier nivel en el planeamiento de su trabajo?  </th>
+				<th align="left" >[105] ¿Estan incluidas todas las personas de cualquier nivel en el planeamiento de su trabajo?  </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="planeamiento_TodasPersIncPlan" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[4] ¿Existen planes de contingencia para los riesgos conocidos? </th>
+				<th align="left" >[106] ¿Existen planes de contingencia para los riesgos conocidos? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="planeamiento_ExisPlanContingRsgoCon" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[5] ¿Los problemas a largo plazo fueron debidamente anotados? </th>
+				<th align="left" >[107] ¿Los problemas a largo plazo fueron debidamente anotados? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="planeamiento_ProbLrgPlazAnot" size="2" /></td>
 			</tr>
@@ -58,19 +65,19 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[6] ¿La organizacion del programa es efectiva?</th>
+				<th align="left" >[108] ¿La organizacion del programa es efectiva?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="organizacion_OrgProgEfect" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[7] ¿Las personas entienden su propio rol y el de los demas en el programa?</th>
+				<th align="left" >[109] ¿Las personas entienden su propio rol y el de los demas en el programa?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="organizacion_PersEntPropRol" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[8] ¿Las personas saben quien tiene autoridad para cada cosa?</th>
+				<th align="left" >[110] ¿Las personas saben quien tiene autoridad para cada cosa?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="organizacion_PersConocAutorid" size="2" /></td>
 			</tr>
@@ -86,7 +93,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[9] ¿El programa cuenta con gerentes experimentados? </th>
+				<th align="left" >[111] ¿El programa cuenta con gerentes experimentados? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="experiencia_ProgTieneGtesExper" size="2" /></td>
 			</tr>
@@ -100,22 +107,41 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[10] ¿La gerencia comunica los problemas a sus superiores y subordinados? </th>
+				<th align="left" >[112] ¿La gerencia comunica los problemas a sus superiores y subordinados? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="interfaces_GciaComnuProbSupSub" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[11] ¿Los conflictos con los clientes estan documentados y resueltos de manera oportuna? </th>
+				<th align="left" >[113] ¿Los conflictos con los clientes estan documentados y resueltos de manera oportuna? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="interfaces_ConflCliDocum" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[12] ¿La gerencia asegura que los clientes esten representados en decisiones sobre
+				<th align="left" >[114] ¿La gerencia incluye a miembros del programa apropiados por parte del cliente en las reuniones? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="interfaces_MienmbrosCliente" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[115] ¿La gerencia asegura que los clientes esten representados en decisiones sobre
 										funcionalidad y operacion? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="interfaces_GciaAsegRepCli" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[116] ¿Es una buena política presentar cuadros optimistas al cliente o al nivel superior de gerencia? </th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="interfaces_cuadrosOptimistas" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>				
+			</tr>
+
+			<tr>
+				<td colspan="6"><input type="submit"  class="submit" value="Continuar a Métodos de Gerencia"/></td>				
 			</tr>
 			
 		</table>

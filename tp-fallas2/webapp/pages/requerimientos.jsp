@@ -1,17 +1,18 @@
 <html>
 	<head>
 		<title>Requerimientos</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<form action="requerimientos.srv" method="POST">
 
-		<table border="1" cellpadding="0" cellspacing="0">
+		<table border="0" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="6" align="left">A. Ingeniería de producto</th>
+				<th class="principal"  colspan="6" align="left">A. Ingeniería de producto</th>
 			</tr>
 			<tr>
-				<th colspan="6" align="left">A1. Requerimientos</th>
+				<th class="subtitulo"  colspan="6" align="left">A1. Requerimientos</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -196,7 +197,7 @@
 			</tr>
 
 			<tr>
-				<td colspan="6"><input type="submit" value="Continuar a Diseño" /></td>				
+				<td colspan="6"><input type="submit"  class="submit" value="Continuar a Diseño" /></td>				
 			</tr>
 
 
