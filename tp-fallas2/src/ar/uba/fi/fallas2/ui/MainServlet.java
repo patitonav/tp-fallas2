@@ -44,16 +44,16 @@ public class MainServlet extends HttpServlet {
 		
 		if (s.equals("requerimientos.srv"))
 			processGroup(req, resp, REQUIREMENTS_KEY, "disenio.jsp");	
-		else if (s.equals("disenio.srv"))
-			processGroup(req, resp, DESIGN_KEY, "code_unit_test.jsp"); 
-		else if (s.equals("code_unit_test.srv"))
+		else if (s.equals("disenio.srv"))  {
+			processGroup(req, resp, DESIGN_KEY, "code_unit_test.jsp");			
+		} else if (s.equals("code_unit_test.srv"))
 			processGroup(req, resp, CODE_AND_UNIT_TEST_KEY, "integracion_pruebas.jsp"); 
-		else if (s.equals("integracion_pruebas.srv"))
-			processGroup(req, resp, INTEGRATION_AND_TEST_KEY, "especialidades_ingenieria.jsp"); 
-		else if (s.equals("especialidades_ingenieria.srv"))
+		else if (s.equals("integracion_pruebas.srv")) {
+			processGroup(req, resp, INTEGRATION_AND_TEST_KEY, "especialidades_ingenieria.jsp");			
+		} else if (s.equals("especialidades_ingenieria.srv"))
 			processGroup(req, resp, ENGINEERING_SPECIALTIES_KEY, "proceso_desarrollo.jsp"); 
 		else if (s.equals("proceso_desarrollo.srv"))
-			processGroup(req, resp, DEVELOPMENT_PROCESS_KEY, "sistema_desarrollo.jsp"); 
+			processGroup(req, resp, DEVELOPMENT_PROCESS_KEY, "sistema_desarrollo.jsp");			
 		else if (s.equals("sistema_desarrollo.srv"))
 			processGroup(req, resp, DEVELOPMENT_SYSTEM_KEY, "proceso_gerencia.jsp"); 
 		else if (s.equals("proceso_gerencia.srv"))

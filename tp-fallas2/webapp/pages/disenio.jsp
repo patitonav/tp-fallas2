@@ -1,14 +1,15 @@
 <html>
 	<head>
 		<title>Dise&ntilde;o</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<form action="disenio.srv" method="POST">
 
-		<table border="1" cellpadding="0" cellspacing="0">
+		<table border="0" cellpadding="0" cellspacing="0">
 			<tr>
-				<th colspan="6" align="left">A2. Dise&ntilde;o</th>
+				<th class="subtitulo" colspan="6" align="left">A2. Dise&ntilde;o</th>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -40,16 +41,23 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[2] ¿Algunos de los diseños dependen de asunciones optimistas o irreales?</th>
+				<th align="left" >[17] ¿Algunos de los diseños dependen de asunciones optimistas o irreales?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_dific_hipOpt" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[3] ¿Existen requerimientos o funciones que son difíciles de diseñar?</th>
+				<th align="left" >[18] ¿Existen requerimientos o funciones que son difíciles de diseñar?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_dific_reqDifDis" size="2" /></td>
 			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(No) (18.a) ¿Tiene Ud. soluciones para todos los requerimientos?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_dific_noReqDifDis" size="2" /></td>
+			</tr>
+			
 			<tr>
 				<td width="10px">&nbsp;</td>
 				<th colspan="5" align="left">c. Interfaces</th>
@@ -60,21 +68,45 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[4] ¿Las interfaces internas están bien definidas</th>
+				<th align="left" >[19] ¿Las interfaces internas están bien definidas</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_interf_infzIntNoDef" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[5]¿Existe un proceso para definir interfaces internas?</th>
+				<th align="left" >[20]¿Existe un proceso para definir interfaces internas?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_interf_NOnProcDefInfz" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[6]¿El hardware se está desarrollando en paralelo con el software?</th>
+				<th align="left" >(Sí) (20.a) ¿Existe algún proceso de control de cambios para estas interfaces?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_interf_NOnProcCtlCam" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >[21]¿Existe hardware siendo desarrollando en paralelo con el software?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_interf_hardDesSoft" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (21.a) ¿Están cambiando las especificaciones del hardware?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_interf_hardEspCamb" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (21.b) ¿Han sido definidas todas las interfaces con el software?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_interf_interfSoft" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (21.c) ¿Va a existir algún protitipo del hardware para probar el software?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_interf_proto" size="2" /></td>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -86,15 +118,27 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[7] ¿Existen problemas de performance?</th>
+				<th align="left" >[22] ¿Existen problemas de performance?</th>
 				<td width="5">&nbsp;</td>
-				<td colspan="2"><input type="text" name="preguntai" size="2" /></td>
+				<td colspan="2"><input type="text" name="product_dis_perfor_probPerf" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[8] ¿Se hizo un análisis de performance?</th>
+				<th align="left" >[23] ¿Se hizo un análisis de performance?</th>
 				<td width="5">&nbsp;</td>
-				<td colspan="2"><input type="text" name="preguntai" size="2" /></td>
+				<td colspan="2"><input type="text" name="product_dis_perfor_sinAnalPerf" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (23.a) ¿Es confiable este análisis?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_perfor_analPerfSinConf" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (21.b) ¿Existe algún modelo para hacer un seguimiento de la performance durante el diseño y la implementación?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_perfor_analPerfSinMod" size="2" /></td>
 			</tr>
 			<tr>
 				<td width="10px">&nbsp;</td>
@@ -106,19 +150,19 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[9] ¿El software será fácil de probar? </th>
+				<th align="left" >[24] ¿El software será fácil de probar? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_test_sinFacTest" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[10] ¿El diseño incluye características para ayudar a las pruebas? </th>
+				<th align="left" >[25] ¿El diseño incluye características para ayudar a las pruebas? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_test_disNoCarTest" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[11] ¿Los testers se involucran en el análisis de los requerimientos? </th>
+				<th align="left" >[26] ¿Los testers se involucran en el análisis de los requerimientos? </th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_test_testNoInvAnalReq" size="2" /></td>
 			</tr>
@@ -132,7 +176,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >[12] ¿El hardware limita su tarea de especificar requerimientos?</th>
+				<th align="left" >[27] ¿El hardware limita su tarea de especificar requerimientos?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_limHard_limHabCumpReq" size="2" /></td>
 			</tr>
@@ -146,9 +190,15 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left">[13] ¿Esta reusando software que no se desarrollo en el programa?</th>
+				<th align="left">[28] ¿Esta reusando software que no se desarrollo en el programa?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_softNoDes_reUtilSofNoDes" size="2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" width="40px">&nbsp;</td>
+				<th align="left" >(Sí) (28.1) ¿Cree Ud. que puedan existir problemas?</th>
+				<td width="5">&nbsp;</td>
+				<td colspan="2"><input type="text" name="product_dis_softNoDes_reUtilSofNoDesProb" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
@@ -168,7 +218,7 @@
 			</tr>
 
 			<tr>
-				<td colspan="6"><input type="submit" value="Continuar a Código y Pruebas Unitarias"/></td>				
+				<td colspan="6"><input type="submit"  class="submit" value="Continuar a Código y Pruebas Unitarias"/></td>				
 			</tr>
 		</table>
 
