@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC
+   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+   "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <display-name>TP-Fallas 2</display-name>
+    
+  <!-- Standard Action Servlet Configuration (with debugging) -->
+  <servlet>
+    <servlet-name>main</servlet-name>
+    <servlet-class>ar.uba.fi.fallas2.ui.MainServlet</servlet-class>
+  </servlet>
+
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>main</servlet-name>
+    <url-pattern>*.srv</url-pattern>
+  </servlet-mapping>
+
+ 
+  <!-- Session Configuration -->
+  <session-config>
+    <session-timeout>600</session-timeout>
+  </session-config>
+
+  <!-- The Usual Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>
