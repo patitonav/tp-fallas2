@@ -136,7 +136,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >(Sí) (21.b) ¿Existe algún modelo para hacer un seguimiento de la performance durante el diseño y la implementación?</th>
+				<th align="left" >(Sí) (23.b) ¿Existe algún modelo para hacer un seguimiento de la performance durante el diseño y la implementación?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_dis_perfor_analPerfSinMod" size="2" /></td>
 			</tr>

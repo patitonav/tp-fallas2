@@ -22,7 +22,7 @@
 				<td colspan="2" width="40px">&nbsp;</td>
 				<th align="left" >[1] ¿Son estables los requerimientos?</th>
 				<td width="5">&nbsp;</td>
-				<td colspan="2"><input type="text" name="req_estabilidad_reqestables" size="2" /></td>
+				<td colspan="2"><input type="text" name="req_estab_reqestables" size="2" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
@@ -129,7 +129,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="40px">&nbsp;</td>
-				<th align="left" >(No) (11.c) ¿Se hicieron estudios de viabilidad sobre los requerimientos?</th>
+				<th align="left" >(Sí) (11.c) ¿Se hicieron estudios de viabilidad sobre los requerimientos?</th>
 				<td width="5">&nbsp;</td>
 				<td colspan="2"><input type="text" name="product_req_viab_reqNoDifSinEst" size="2" /></td>
 			</tr>
