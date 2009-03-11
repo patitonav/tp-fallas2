@@ -5,6 +5,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -42,34 +43,35 @@ public class MainServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)	throws ServletException, IOException {
 		String s = req.getRequestURI().substring(req.getRequestURI().lastIndexOf('/') + 1);
 		
-		if (s.equals("requerimientos.srv"))
-			processGroup(req, resp, REQUIREMENTS_KEY, "disenio.jsp");	
-		else if (s.equals("disenio.srv"))  {
+		if (s.equals("requerimientos.srv")) {
+			processGroup(req, resp, REQUIREMENTS_KEY, "disenio.jsp");			
+		} else if (s.equals("disenio.srv"))  {
 			processGroup(req, resp, DESIGN_KEY, "code_unit_test.jsp");			
-		} else if (s.equals("code_unit_test.srv"))
-			processGroup(req, resp, CODE_AND_UNIT_TEST_KEY, "integracion_pruebas.jsp"); 
-		else if (s.equals("integracion_pruebas.srv")) {
+		} else if (s.equals("code_unit_test.srv")){
+			processGroup(req, resp, CODE_AND_UNIT_TEST_KEY, "integracion_pruebas.jsp");			
+		} else if (s.equals("integracion_pruebas.srv")) {
 			processGroup(req, resp, INTEGRATION_AND_TEST_KEY, "especialidades_ingenieria.jsp");			
-		} else if (s.equals("especialidades_ingenieria.srv"))
-			processGroup(req, resp, ENGINEERING_SPECIALTIES_KEY, "proceso_desarrollo.jsp"); 
-		else if (s.equals("proceso_desarrollo.srv"))
+		} else if (s.equals("especialidades_ingenieria.srv")) {
+			processGroup(req, resp, ENGINEERING_SPECIALTIES_KEY, "proceso_desarrollo.jsp");			
+		} else if (s.equals("proceso_desarrollo.srv")) {
 			processGroup(req, resp, DEVELOPMENT_PROCESS_KEY, "sistema_desarrollo.jsp");			
-		else if (s.equals("sistema_desarrollo.srv"))
-			processGroup(req, resp, DEVELOPMENT_SYSTEM_KEY, "proceso_gerencia.jsp"); 
-		else if (s.equals("proceso_gerencia.srv"))
-			processGroup(req, resp, MANAGEMENT_PROCESS_KEY, "metodo_gerencia.jsp"); 
-		else if (s.equals("metodo_gerencia.srv"))
-			processGroup(req, resp, MANAGEMENT_METHODS_KEY, "ambiente_trabajo.jsp");
-		else if (s.equals("ambiente_trabajo.srv"))
-			processGroup(req, resp, WORK_ENVIRONMENT_KEY, "recursos.jsp");
-		else if (s.equals("recursos.srv"))
-			processGroup(req, resp, RESOURCES_KEY, "contrato.jsp"); 
-		else if (s.equals("contrato.srv"))
-			processGroup(req, resp, CONTRACT_KEY, "interfaces_programa.jsp"); 
-		else if (s.equals("interfaces_programa.srv"))
-			processGroup(req, resp, PROGRAM_INTERFACES_KEY, "fin_tbq.jsp");
-		else if (s.equals("conclusiones.srv"))
+		} else if (s.equals("sistema_desarrollo.srv")) {
+			processGroup(req, resp, DEVELOPMENT_SYSTEM_KEY, "proceso_gerencia.jsp");			
+		} else if (s.equals("proceso_gerencia.srv")) {
+			processGroup(req, resp, MANAGEMENT_PROCESS_KEY, "metodo_gerencia.jsp");			
+		} else if (s.equals("metodo_gerencia.srv")) {
+			processGroup(req, resp, MANAGEMENT_METHODS_KEY, "ambiente_trabajo.jsp");			
+		} else if (s.equals("ambiente_trabajo.srv")) {
+			processGroup(req, resp, WORK_ENVIRONMENT_KEY, "recursos.jsp");			
+		} else if (s.equals("recursos.srv")) {
+			processGroup(req, resp, RESOURCES_KEY, "contrato.jsp");			
+		} else if (s.equals("contrato.srv")) {
+			processGroup(req, resp, CONTRACT_KEY, "interfaces_programa.jsp"); 			
+		} else if (s.equals("interfaces_programa.srv")) {
+			processGroup(req, resp, PROGRAM_INTERFACES_KEY, "fin_tbq.jsp");			
+		} else if (s.equals("conclusiones.srv")) {
 			showConclusions(req, resp);		
+		}
 	}
 	
 	
@@ -91,6 +93,7 @@ public class MainServlet extends HttpServlet {
 		List<Risk> risks = clipsWrapper.fastRun();
 		req.getSession().setAttribute("risks", risks);
 		
+		req.getSession().setAttribute(ANSWERS_MAP_KEY ,null);
 		resp.sendRedirect(resp.encodeRedirectURL(req.getContextPath() + "/pages/conclusiones.jsp"));		
 	}
 

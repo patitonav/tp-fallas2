@@ -1,8 +1,11 @@
 package ar.uba.fi.fallas2.ui;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 public class LanguageInterpreter {
@@ -11,6 +14,8 @@ public class LanguageInterpreter {
 	protected Map<String, Set<String>> words = null;
 	private static String SI_KEY ="SI";
 	private static String NO_KEY ="NO";
+	private static Properties properties = null;
+	private String propFile = "C:\\Projects\\tp-fallas2\\config\\riesgos.properties";
 	
 	static public LanguageInterpreter getInstance() {
 		if (instance == null) {
@@ -31,7 +36,16 @@ public class LanguageInterpreter {
 		no.add("no"); no.add("nunca"); no.add("ninguno"); no.add("ninguna"); no.add("jamás"); no.add("jamas");
 		
 		words.put(SI_KEY, si);
-		words.put(NO_KEY, si);		
+		words.put(NO_KEY, no);		
+		
+		properties = new Properties();
+	    try {
+	        properties.load(new FileInputStream(propFile));
+	    	
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+
 	}
 	
 	public String getAnswer(String answer) {
@@ -47,36 +61,7 @@ public class LanguageInterpreter {
 	}
 	
 	public String getRiskName(String riskKey) {
-		if (riskKey.equals("riesgo.requerimientos"))
-			return "Requerimientos";
-		else if (riskKey.equals("riesgo.disenio"))
-			return "Diseño";
-		else if (riskKey.equals("riesgo.code.unit.test"))
-			return "Código y Pruebas Unitarias";
-		else if (riskKey.equals("riesgo.pruebas"))
-			return "Interfaces y Pruebas";
-		else if (riskKey.equals("riesgo.especialidades.ingenieria"))
-			return "Especialidades de Ingeniería";
-		else if (riskKey.equals("riesgo.proceso.desarrollo"))
-			return "Proceso de Desarrollo";
-		else if (riskKey.equals("riesgo.sistema.desarrollo"))
-			return "Sistema de Desarrollo";
-		else if (riskKey.equals("riesgo.proceso.gerencia"))
-			return "Proceso de Gerencia";
-		else if (riskKey.equals("riesgo.metodo.gerencia"))
-			return "Métodos de Gerencia";
-		else if (riskKey.equals("riesgo.ambiente.trabajo"))
-			return "Ambiente de Trabajo";
-		else if (riskKey.equals("riesgo.recursos"))
-			return "Recursos";
-		else if (riskKey.equals("riesgo.contrato"))
-			return "Contrato";
-		else if (riskKey.equals("riesgo.interfaces"))
-			return "Interfaces";
-		else if (riskKey.equals("riesgo.proyecto"))
-			return "Proyecto";
-			
-		return "";
+		return properties.getProperty(riskKey);
 	}
 	
 	

@@ -20,16 +20,19 @@ public class ClipsWrapper {
 
 	public ClipsWrapper(String ruta) {
 		this.clips = new Environment();
+		clips.clear();
 		clips.load(clpFile);
 		clips.reset();		
 	}
 	
 	public List<Risk> fastRun() {
 		List<Risk> result = new ArrayList<Risk>();
+				
 		clips.run();
 		String evalStr = "(find-all-facts ((?a answer))(= 1 1))";
 		MultifieldValue pv = (MultifieldValue) clips.eval(evalStr);
 		
+		//clips.eval("(find-all-facts )");
 		
 		int tNum = pv.listValue().size();
         if (tNum == 0) {
